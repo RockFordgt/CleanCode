@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>BackgroundSwirls.qml</file>
+        <file>OpacityTransitionPresentation.qml</file>
+        <file>Swirl.qml</file>
+        <file>particle.png</file>
+    </qresource>
+</RCC>
