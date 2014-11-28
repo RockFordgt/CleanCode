@@ -6,5 +6,25 @@
         <file>Swirl.qml</file>
         <file>particle.png</file>
         <file>main.qml</file>
+        <file>Slide_01.qml</file>
+        <file>Slide_02.qml</file>
+        <file>Slide_03.qml</file>
+        <file>Slide_04.qml</file>
+        <file>Slide_05.qml</file>
+        <file>Slide_06.qml</file>
+        <file>Slide_07.qml</file>
+        <file>Slide_08.qml</file>
+        <file>Slide_09.qml</file>
+        <file>Slide_10.qml</file>
+        <file>Slide_11.qml</file>
+        <file>Slide_12.qml</file>
+        <file>Slide_13.qml</file>
+        <file>Slide_14.qml</file>
+        <file>Slide_15.qml</file>
+        <file>Slide_16.qml</file>
+        <file>Slide_17.qml</file>
+        <file>Slide_18.qml</file>
+        <file>Slide_19.qml</file>
+        <file>Slide_20.qml</file>
     </qresource>
 </RCC>
