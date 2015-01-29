@@ -1,7 +1,7 @@
 import QtQuick 2.3
 import Qt.labs.presentation 1.0
 Slide{
-    title: "Kodowanie typów"
+    title: "Znaczące nazwy - Kodowanie typów"
     content:[
         "Kodowane typów zmiennych:",
         " dodatkowa warstwa",
@@ -38,6 +38,8 @@ Slide{
     CodeRect{
         id:example_definitions
         width: parent.width*0.9
+        anchors.top: parent.text
+        anchors.topMargin: 5
         anchors.bottom: parent.bottom
         visible: false
         code:[

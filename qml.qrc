@@ -8,7 +8,7 @@
         <file>main.qml</file>
         <file>Slide_01.qml</file>
         <file>Slide_02.qml</file>
-        <file>Slide_03.qml</file>
+        <file>Slide_03_1.qml</file>
         <file>Slide_04.qml</file>
         <file>Slide_05.qml</file>
         <file>Slide_06.qml</file>
@@ -26,5 +26,18 @@
         <file>Slide_18.qml</file>
         <file>Slide_19.qml</file>
         <file>Slide_20.qml</file>
+        <file>Slide_21.qml</file>
+        <file>Slide_03_0.qml</file>
+        <file>Slide_22.qml</file>
+        <file>grafika/imiona.png</file>
+        <file>grafika/Plotka.png</file>
+        <file>Slide_23.qml</file>
+        <file>Slide_24.qml</file>
+        <file>Slide_25.qml</file>
+        <file>Slide_26.qml</file>
+        <file>Slide_27.qml</file>
+        <file>Slide_28.qml</file>
+        <file>Slide_29.qml</file>
+        <file>Slide_30.qml</file>
     </qresource>
 </RCC>

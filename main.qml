@@ -5,19 +5,23 @@ Window{
     id: mainWindow
     visible: true
     visibility: Window.Windowed
-    width: 800
-    height: 600
+    width: 1219
+    height: 825
     CleanCodePresentation{
         parentWindow: mainWindow
         anchors.fill: parent
         Keys.onPressed: {
-            if(event.key == Qt.Key_F1){
-                if(mainWindow.visibility == Window.Windowed){
-                    mainWindow.visibility = Window.FullScreen
-                } else {
-                    mainWindow.visibility = Window.Windowed
-                }
+            switch(event.key){
+            case Qt.Key_F1: switchFullScreen(); break;
+            case Qt.Key_F5: reloadCurrentSlide(); break;
             }
+        }
+    }
+    function switchFullScreen(){
+        if(mainWindow.visibility == Window.Windowed){
+            mainWindow.visibility = Window.FullScreen
+        } else {
+            mainWindow.visibility = Window.Windowed
         }
     }
 }

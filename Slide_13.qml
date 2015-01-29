@@ -1,9 +1,9 @@
 import QtQuick 2.3
 import Qt.labs.presentation 1.0
 Slide{
-   title: "Nazwy - garść praktyk (2)"
+   title: "Znaczące nazwy - Nazwy Klas"
    content:[
-       "Nazwy Klas",
+       "Obiekty ... są",
        " powinny być rzeczownikami:",
        "  Customer",
        "  WikiPage",

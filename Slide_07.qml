@@ -15,12 +15,18 @@ Slide{
     notes: "Czy \"NameString\" od słowa Name?
             A może \"Name\" może być typu float => dezinformacja
             --
+            PhoneNumber phoneString.
+            --
             getActiveAccount();
             getActiveAccounts();
             getActiveAccountInfo():
             --
             Customer
-            CustomerObject"
+            CustomerObject
+            Product
+            ProductInfo
+            ProductData
+              - Info i Data nic nie wnoszą, bo nie ma (nie znamy?) konwencji"
 
     CodeRect{
         id: addNumberExample_idexedNames
@@ -47,7 +53,7 @@ Slide{
           "}",
         ]
         visible:false
-        width:( parent.width*0.8)//2)/3
+        width:( parent.width*0.9)//2)/3
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         onVisibleChanged:{

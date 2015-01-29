@@ -10,13 +10,15 @@ OpacityTransitionPresentation {
     fontFamily: "Oxygen"
     codeFontFamily: "OxygenMono"
     anchors.fill: parent
-
+    property variant slidesLoaded: []
+    property bool fistLoad: true
+//    property string slidesSource: "qrc:/"
+    property string slidesSource: "file:"
     BackgroundSwirls{
         /*color2: "green"
         color1: "greenyellow"*/
         color1:"darkcyan"
         color2:"darkgreen"
-        //paricles: false
         paricles: true
     }
     SlideCounter{
@@ -43,60 +45,49 @@ OpacityTransitionPresentation {
             }
         }
     }
-
     FolderListModel{
-        id:files
-        nameFilters: ["Slide_*.qml"]
-        folder: "qrc:///"
+        id: slides
+        showDirs: false
+        folder: slidesSource
+        nameFilters: "Slide*.qml"
         sortField: FolderListModel.Name
-    }
-    Slide{
-        title:"slides"
-
-        ListView{
-            anchors.fill: parent
-            model: files
-            delegate: Component{
-                Text {
-                    id:fileNameField
-                    //width:200
-//                    height: 15
-                    text: fileName
-                    color:"black"
-                    font.pixelSize: 28
-                    anchors.margins: 30
-                    Rectangle{
-                        anchors.fill: fileNameField
-                        z: fileNameField.z - 3;
-                        color: "ivory"
-                        border.color: "blue"
-                    }
-                }
+        onCountChanged: {
+            console.log("new count:", count);
+            for(var i=0; i < count; i++){
+                var slideFile = get(i, "fileName");
+                loadSlide(slideFile)
+            }
+            if(fistLoad){
+                cleanCodePresentation.currentSlide = 0;
+                cleanCodePresentation.slides[0].visible = true;
+                fistLoad = false;
             }
         }
     }
+
     Component.onCompleted: {
-        for(var i = 0; i < files; i++){
-            var fileName = files.get(i, "fileName");
-            if(fileName)
-            console.log
+        console.log("count:", slides.count)
+    }
+    function loadSlide(slideFile){
+        if( cleanCodePresentation.slidesLoaded.indexOf(slideFile) < 0 ){
+            var slide = Qt.createComponent(slidesSource + slideFile)
+            console.log("Loading slide:", slideFile, "(",cleanCodePresentation.slides.length,")", slide.url)
+            if(slide.status == Component.Ready){
+                var slideObject = slide.createObject(cleanCodePresentation);
+                if(slideObject.isSlide){
+                    cleanCodePresentation.slides.push(slideObject);
+                    cleanCodePresentation.slidesLoaded.push(slideFile);
+                }
+            } else {
+                console.log(slide.status, ":", slide.errorString() )
+            }
         }
     }
-
-    Slide_01{}
-    Slide_02{}
-    Slide_03{}
-    Slide_04{}
-    Slide_05{}
-    Slide_06{}
-    Slide_07{}
-
-    Slide_08{}
-    Slide_09{}
-    Slide_10{}
-
-    Slide_11{}
-    Slide_12{}
-    Slide_13{}
-
+    function reloadCurrentSlide(){
+        //create new
+        //hide old
+        //show new
+        //delete old
+        //put new in place of old
+    }
 }

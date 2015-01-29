@@ -16,9 +16,10 @@ Slide{
 
         }
         CodeRect{
+            id:betterCode
             width: parent.width
             code:[
-                "int realDaysPerIdealDay = 4;",,
+                "int realDaysPerIdealDay = 4;",
                 "const int WORK_DAYS_PER_WEEK = 5;",
                 "int sum = 0;",
                 "for (int j=0; j < NUMBER_OF_TASKS; j++) {",
@@ -27,6 +28,10 @@ Slide{
                 "    sum += realTaskWeeks;",
                 "}"
             ]
+            visible: false
         }
     }
+    toShow: [betterCode]
+    notes:
+        "co łatwiej znaleźć WORK_DAYS_PER_WEEK czy \"5\" - które 5 nas ineresuje?"
 }

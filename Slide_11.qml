@@ -1,7 +1,7 @@
 import QtQuick 2.3
 import Qt.labs.presentation 1.0
 Slide{
-   title: "Member Prefix"
+   title: "Znaczące nazwy - Member Prefix"
    content:[
        "Prefixy nie są już potrzebne",
        " - małe jest piękne",
@@ -16,7 +16,7 @@ Slide{
        code:[
            "class Part{",
            "private:",
-           "  String m_dsc; //The textual description",
+           "  String m_dsc; ///< The textual description",
            "public:",
            "  void setName(String name) {",
            "    m_dsc = name;",
@@ -32,7 +32,7 @@ Slide{
        code:[
            "class Part{",
            "private:",
-           "  String description; //The textual description",
+           "  String description; ///< The textual description",
            "public:",
            "  void setDescription(String description) {",
            "    this->description = description;",
