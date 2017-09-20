@@ -18,7 +18,7 @@ OTHER_FILES= *.qml
 
 #copying slides to build dir
 copyslides.commands = $(COPY_DIR) $$PWD/Slide_*.qml $$OUT_PWD
-first.depends = $(irst) copyslides
+first.depends = $(first) copyslides
 export(first.depends)
 export(copyslides.commands)
 QMAKE_EXTRA_TARGETS += first copyslides
