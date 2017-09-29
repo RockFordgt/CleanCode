@@ -1,4 +1,4 @@
-import QtQuick 2.3
+import QtQuick 2.5
 import Qt.labs.presentation 1.0
 import QtGraphicalEffects 1.0
 import QtQuick.Window 2.1
@@ -73,6 +73,35 @@ OpacityTransitionPresentation {
         slidesToLoad = [
                      "Slide_01.qml"
                     ,"Slide_02.qml"
+                    ,"Slide_03_0.qml"
+                    ,"Slide_03_1.qml"
+                    ,"Slide_04.qml"
+                    ,"Slide_05.qml"
+                    ,"Slide_06.qml"
+                    ,"Slide_07.qml"
+                    ,"Slide_08.qml"
+                    ,"Slide_09.qml"
+                    ,"Slide_10.qml"
+                    ,"Slide_11.qml"
+                    ,"Slide_12.qml"
+                    ,"Slide_13.qml"
+                    ,"Slide_14.qml"
+                    ,"Slide_15.qml"
+                    ,"Slide_16.qml"
+                    ,"Slide_17.qml"
+                    ,"Slide_18.qml"
+                    ,"Slide_19.qml"
+                    ,"Slide_20.qml"
+                    ,"Slide_21.qml"
+                    ,"Slide_22.qml"
+                    ,"Slide_23.qml"
+                    ,"Slide_24.qml"
+                    ,"Slide_25.qml"
+                    ,"Slide_26.qml"
+                    ,"Slide_27.qml"
+                    ,"Slide_28.qml"
+                    ,"Slide_29.qml"
+                    ,"Slide_30.qml"
                 ]
         loadSlides();
 //        loadSlide("Slide_01.qml");
@@ -135,7 +164,7 @@ OpacityTransitionPresentation {
 
     function pushOnStack(){
         if (loadedSlide.status == Component.Ready) {
-            var slide = loadedSlide.creageObject(cleanCodePresentation);
+            var slide = loadedSlide.createObject(cleanCodePresentation);
             if (slide.isSlide) {
                 cleanCodePresentation.slides.push(slide);
                 nextSlideToLoad = nextSlideToLoad + 1;
