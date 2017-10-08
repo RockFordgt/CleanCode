@@ -1,12 +1,13 @@
 import QtQuick 2.0
 import QtQuick.Window 2.1
 
-Window{
+Item{
     id: mainWindow
     visible: true
-    visibility: Window.Windowed
-    width: 1219
-    height: 825
+//    visibility: Window.Windowed
+//    width: 1219
+//    height: 825
+    anchors.fill: parent
     CleanCodePresentation{
         parentWindow: mainWindow
         anchors.fill: parent

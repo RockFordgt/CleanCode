@@ -5,7 +5,7 @@ Slide{
     titleColor: "transparent"
     Image {
         id: imiona
-        source: "qrc:/grafika/Plotka.png"
+        source: "grafika/Plotka.png"
 
         fillMode: Image.PreserveAspectFit
         anchors.top: authors.bottom

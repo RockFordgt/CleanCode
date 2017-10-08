@@ -14,7 +14,9 @@ QML_IMPORT_PATH =
 # Default rules for deployment.
 include(deployment.pri)
 
-OTHER_FILES= *.qml
+# QML_FILES = *.qml
+OTHER_FILES = *.qml
+OTHER_FILES += qmldir
 
 #copying slides to build dir
 copyslides.commands = $(COPY_DIR) $$PWD/Slide_*.qml $$OUT_PWD

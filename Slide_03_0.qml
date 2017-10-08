@@ -1,6 +1,8 @@
 import QtQuick 2.3
 import Qt.labs.presentation 1.0
 Slide{
+    title: "Znaczące Nazwy - sekcja"
+    visibleTitle: false
     Text{
         text: "Znaczące Nazwy"
         anchors.right: parent.right
@@ -11,7 +13,7 @@ Slide{
     }
     Image {
         id: imiona
-        source: "qrc:/grafika/imiona.png"
+        source: "grafika/imiona.png"
         width: parent.width*0.7
         fillMode: Image.PreserveAspectFit
         anchors.centerIn: parent

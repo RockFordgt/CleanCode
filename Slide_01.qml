@@ -3,7 +3,9 @@ import Qt.labs.presentation 1.0
 
 Slide{
     id:slide_00
-    centeredText: "Czysty Kod!"
+    title: "Czysyt kod"
+    visibleTitle: false
+    centeredText: "Czysty Kod!!"
     fontScale: 4
     Text{
         text: "czyli jak pisać lepszy kod"

@@ -166,44 +166,40 @@ OpacityTransitionPresentation {
         if (loadedSlide.status == Component.Ready) {
             var slide = loadedSlide.createObject(cleanCodePresentation);
             if (slide.isSlide) {
+                slidesLoaded.push(loadedSlide);
                 cleanCodePresentation.slides.push(slide);
                 nextSlideToLoad = nextSlideToLoad + 1;
                 loadSlide();
+            } else {
+                loadedSlide.deleteLater();
             }
         } else if ( loadedSlide.status == Component.Error) {
             console.log(slide.errorString());
         }
-
-//        var slideObject = sourceSlide.createObject(cleanCodePresentation);
-//        console.log(target);
-//        console.log(Component.sender());
-//        console.log(sourceSlide.isSlide);
-
-//        cleanCodePresentation.slides.push(source.createObject(cleanCodePresentation));
-//        cleanCodePresentation.currentSlide = 0;
-//        cleanCodePresentation.slides[0].visible = true;
     }
 
     function reloadCurrentSlide(){
-        var component = Qt.createComponent(
-                    slidesSource +
-                    cleanCodePresentation.slidesLoaded[
-                        cleanCodePresentation.currentSlide
-                    ]);
-        if(component.status == Component.Ready){
+        var url = cleanCodePresentation.slidesLoaded[cleanCodePresentation.currentSlide].url;
+        console.log("source url:", url);
+
+        loadedSlide = Qt.createComponent(url);
+        if(loadedSlide.status == Component.Ready){
+            replaceOldSlide();
+        } else {
+            loadedSlide.statusChanged.connect(replaceOldSlide);
+        }
+
+    }
+    function replaceOldSlide() {
+            console.log("replacing old slide");
             //create new
-            var slide = component.createObject(cleanCodePresentation);
-            //hide old
-            cleanCodePresentation.slides[cleanCodePresentation.currentSlide].visible = false;
-            //show new
+            var slide = loadedSlide.createObject(cleanCodePresentation);
             slide.visible = true;
+            cleanCodePresentation.slides[cleanCodePresentation.currentSlide].visible = false;
             //delete old
             cleanCodePresentation.slides[cleanCodePresentation.currentSlide].destroy();
             //put new in place of old
             cleanCodePresentation.slides[cleanCodePresentation.currentSlide] = slide;
-        } else {
-            console.log("loading error (",component.status,"):", component.errorString());
-        }
-
+            console.log("relading finished.");
     }
 }
