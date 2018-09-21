@@ -2,7 +2,7 @@ import QtQuick 2.5
 import Qt.labs.presentation 1.0
 import QtGraphicalEffects 1.0
 import QtQuick.Window 2.1
-import Qt.labs.folderlistmodel 2.1
+//import Qt.labs.folderlistmodel 2.1
 
 
 OpacityTransitionPresentation {
@@ -174,7 +174,7 @@ OpacityTransitionPresentation {
                 loadedSlide.deleteLater();
             }
         } else if ( loadedSlide.status == Component.Error) {
-            console.log(slide.errorString());
+            console.log(loadedSlide.errorString());
         }
     }
 
